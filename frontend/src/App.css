@@ -27,12 +27,16 @@ body {
 }
 
 .desc {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px
 }
 
+.home-spn {
+  color: #F26764
+}
+
 .btn {
-  width: 120px;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,59 +51,6 @@ body {
   cursor: pointer;
 }
 
-.signup-page {
-  background-color: #1a1a1a;
-  padding: 40px;
-  border-radius: 8px;
-  max-width: 300px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.signup-page h2 {
-  font-weight: 300;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.signup-page form div {
-  margin-bottom: 15px;
-}
-
-.signup-page label {
-  font-weight: 300;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.signup-page input {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  width: 300px;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
-
-.signup-page button {
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-  padding: 10px;
-  border-radius: 25px;
-  background-color: #fff;
-  color: #000;
-  border: none;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-}
 
 .grid-div {
   display: grid;
@@ -115,6 +66,28 @@ body {
   flex-direction: column;
 }
 
+.split-main-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+
+}
+
+.split-div {
+  width: 300px;
+  height: 200px;
+  background-color: #FDFFD2;
+  color: #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: background-color 0.3s ease-in-out;
+}
+
 .split-title {
   text-align: center;
   font-weight: 400;
@@ -122,34 +95,20 @@ body {
   margin: 0;
 }
 
-.split-username {
-  font-weight: 400;
-  font-size: 1.2rem;
-  margin: 1.2rem;
+.split-div:hover {
+  background-color: #667BC6; 
 }
 
-.user-detail {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5rem;
+.split-user {
+  font-size: 20px;
+  font-weight: 500;
 }
 
-.profile {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
+.split-dtl {
+  font-size: 12px;
 }
 
-.btn-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.split-desc {
-  color: #FEE01C;
+.split-cnt {
+  font-weight: 600;
+  font-size: 3em;
 }
