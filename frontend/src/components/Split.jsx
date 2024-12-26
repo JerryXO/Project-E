@@ -5,7 +5,7 @@ import { useCallback } from 'react';
 import Button from './Button';
 import { googleLogout } from '@react-oauth/google';
 
-function Split({ onLogout }) {
+function Split({ user, onLogout }) {
 
   // split list format
   const splitList = [
@@ -40,7 +40,7 @@ function Split({ onLogout }) {
 
   const navigate = useNavigate();
   const handleClick = (split) => {
-    navigate(`/split/${split.splitId}`, { state: { split } });  // Navigate to the SplitDetail page and pass the splitId
+    navigate(`/split/${split.splitId}`, { state: { split, currentUser: user } });  // Navigate to the SplitDetail page and pass the splitId
   };
 
   const handleLogout = useCallback(() => {
@@ -56,7 +56,9 @@ function Split({ onLogout }) {
 
   return (
     <div className="split-main-div">
-      <h3 className='split-title'>Hello <span className='home-spn'>user</span>! Checkout split details here.</h3>
+      <h3 className='split-title'>Hello <span className='home-spn'>
+      {user ? user.name : 'Guest'}  
+      </span>! Checkout split details here.</h3>
       {
         splitList.map((split) => (
           <div className="split-div" key = {split.splitId} onClick={() => handleClick(split)}>

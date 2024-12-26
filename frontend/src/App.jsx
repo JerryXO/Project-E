@@ -13,8 +13,17 @@ function App() {
   const [user, setUser] = useState(null);
 
   const handleLoginSuccess = (credentialResponse) => {
-    console.log('Google login successful', credentialResponse);
-    setUser(credentialResponse);
+    // console.log('Google login successful', credentialResponse);
+    const base64Url = credentialResponse.credential.split('.')[1];
+    const base64 = decodeURIComponent(atob(base64Url).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    const userData = JSON.parse(base64);
+    setUser({
+      name: userData.name,
+      email: userData.email,
+      picture: userData.picture,
+    });
   };
 
   const handleLoginError = () => {
@@ -31,7 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home user={user} onLoginSuccess={handleLoginSuccess} onLoginError={handleLoginError} />} />
           <Route path="/addcount" element={<Signup />} />
-          <Route path="/split" element={<Split  onLogout={handleLogout}/>} />
+          <Route path="/split" element={<Split user={user} onLogout={handleLogout}/>} />
           <Route path="/split/:splitId" element={<SplitDetail />} />
         </Routes>
       </Router>

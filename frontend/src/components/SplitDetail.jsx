@@ -6,13 +6,7 @@ import { useCallback } from 'react';
 
 function SplitDetail() {
   const location = useLocation();
-  const { split } = location.state;
-
-  const currentUser = {
-    userName: 'Murali',
-    email: 'murali@yopmail.com',
-    profileImageUrl: ''
-  }
+  const { split, currentUser } = location.state;
 
   const [counter, setCounter] = useState(0);
 
@@ -53,8 +47,8 @@ function SplitDetail() {
 
       {/* Right side */}
       <div className="split-details-right">
-        <img src={split.userImage || 'https://via.placeholder.com/150'} style={{ width: '100px', height: '100px', borderRadius: '50%' }}/>
-        <span className='split-details-right-user'>{currentUser.userName}</span>
+        <img src={currentUser.picture || 'https://via.placeholder.com/150'} style={{ width: '100px', height: '100px', borderRadius: '50%' }}/>
+        <span className='split-details-right-user'>{currentUser.name}</span>
         <span>Add your egg count below</span>
         <div className="counter-div">
           <button onClick={handleDecrease} className='counter-btn'>-</button>
