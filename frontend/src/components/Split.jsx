@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import { useCallback } from 'react';
 import Button from './Button';
+import { googleLogout } from '@react-oauth/google';
 
-function Split() {
+function Split({ onLogout }) {
 
   // split list format
   const splitList = [
@@ -43,9 +44,11 @@ function Split() {
   };
 
   const handleLogout = useCallback(() => {
-    //need to add code to delete cookie
+    console.log("User logged out successfully");
+    onLogout(); 
+    googleLogout(); 
     navigate('/');
-  }, [navigate]);
+  }, [navigate, onLogout]);
 
   const handleHome = useCallback(() => {
     navigate('/');
@@ -66,7 +69,7 @@ function Split() {
       }
       <div className="grid-div">
         <Button name = 'Home' clickFunc={handleHome}/>
-        <Button name = 'Logout' clickFunc={handleLogout}/>
+        <Button name='Logout' clickFunc={handleLogout} />
       </div>
     </div>
   )
