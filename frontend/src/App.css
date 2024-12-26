@@ -112,3 +112,69 @@ body {
   font-weight: 600;
   font-size: 3em;
 }
+
+.split-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+
+.split-details-left {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px
+}
+
+.split-detail-left-user {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #CFB08D;
+  margin: 0;
+}
+
+.split-detail-egg-cnt-spn {
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: #76C065;
+}
+
+.split-details-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px
+}
+
+.split-details-right-user {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #CFB08D;
+}
+
+.counter-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1rem;
+}
+
+.counter-btn {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 25px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
