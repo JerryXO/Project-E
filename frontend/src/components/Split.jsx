@@ -47,8 +47,8 @@ function Split() {
     navigate('/');
   }, [navigate]);
 
-  const handleProfile = useCallback(() => {
-    navigate('/profile');
+  const handleHome = useCallback(() => {
+    navigate('/');
   }, [navigate]);
 
   return (
@@ -65,7 +65,7 @@ function Split() {
         ))
       }
       <div className="grid-div">
-        <Button name = 'Profile' clickFunc={handleProfile}/>
+        <Button name = 'Home' clickFunc={handleHome}/>
         <Button name = 'Logout' clickFunc={handleLogout}/>
       </div>
     </div>
